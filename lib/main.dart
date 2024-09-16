@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Icons.school_rounded,
               size: 200,
             ),
-            const SizedBox(height: 100),
+            const SizedBox(height: 20),
             ElevatedButton(
                 style: ElevatedButton.styleFrom(minimumSize: Size(200, 50)),
                 onPressed: () {
@@ -72,42 +72,50 @@ class _LoginPageState extends State<LoginPage> {
       body: Form(
           key: _formKey,
           child: Center(
-            child: Column(
-              children: [
-                TextField(
-                    controller: _login,
-                    decoration: const InputDecoration(
-                      hintText: 'Entre com o login', //hint
-                      prefixIcon: Icon(Icons.account_circle_outlined), //icon
-                      enabledBorder: OutlineInputBorder(
-                        //borda ao redor da entrada
-                        borderSide:
-                            BorderSide(color: Colors.black), //cor da borda
-                      ), //quando receber o foco, altera cor da borda
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                    )),
-                TextField(
-                    controller: _senha,
-                    decoration: const InputDecoration(
-                      hintText: 'Entre com o login', //hint
-                      prefixIcon: Icon(Icons.security_outlined), //icon
-                      enabledBorder: OutlineInputBorder(
-                        //borda ao redor da entrada
-                        borderSide:
-                            BorderSide(color: Colors.black), //cor da borda
-                      ), //quando receber o foco, altera cor da borda
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                    )),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/login');
-                    },
-                    child: Text("Entrar"))
-              ],
+            child: Container(
+              width: 300,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.school_rounded, size: 200),
+                  SizedBox(height: 20),
+                  TextField(
+                      controller: _login,
+                      decoration: const InputDecoration(
+                        hintText: 'Entre com o login', //hint
+                        prefixIcon: Icon(Icons.account_circle_outlined), //icon
+                        enabledBorder: OutlineInputBorder(
+                          //borda ao redor da entrada
+                          borderSide:
+                              BorderSide(color: Colors.black), //cor da borda
+                        ), //quando receber o foco, altera cor da borda
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.blue),
+                        ),
+                      )),
+                  SizedBox(height: 20),
+                  TextField(
+                      controller: _senha,
+                      decoration: const InputDecoration(
+                        hintText: 'Entre com o login', //hint
+                        prefixIcon: Icon(Icons.lock_outline_rounded), //icon
+                        enabledBorder: OutlineInputBorder(
+                          //borda ao redor da entrada
+                          borderSide:
+                              BorderSide(color: Colors.black), //cor da borda
+                        ), //quando receber o foco, altera cor da borda
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.blue),
+                        ),
+                      )),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/login');
+                      },
+                      child: Text("Entrar"))
+                ],
+              ),
             ),
           )),
     );

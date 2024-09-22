@@ -198,55 +198,6 @@ class _ListPageState extends State<ListPage> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-              ElevatedButton(
-                child: (Text("Nota < 60")),
-                onPressed: () {
-                  if (filtro != "Nota < 60") {
-                    setState(() {             
-                      filtro = "Nota < 60";
-                    });
-                    
-                  } else {
-                    setState(() {             
-                      filtro = "todos";
-                    });
-                  }
-                },
-              ),
-              ElevatedButton(
-                child: (Text("Nota >= 60")),
-                onPressed: () {
-                  if (filtro != "Nota >= 60") {
-                    setState(() {
-                      filtro = "Nota >= 60";
-                    });
-                  } else {
-                    setState(() {             
-                      filtro = "todos";
-                    });
-
-                  }
-                },
-              ),
-              ElevatedButton(
-                child: (Text("Nota = 100")),
-                onPressed: () {
-                  if (filtro != "Nota = 100") {
-                    setState(() {
-                      filtro = "Nota = 100";
-                    });
-                  } else {
-                    setState(() {             
-                      filtro = "todos";
-                    });
-                  }
-                },
-              ),
-              SizedBox(height: 64),
-            ]),
             Expanded(
               child: ListView.builder(
                 itemCount: geraListaFiltrada(filtro, listaOriginal).length,
@@ -350,6 +301,56 @@ class _ListPageState extends State<ListPage> {
                 },
               ),
             ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+              ElevatedButton(
+                child: (Text("Nota < 60")),
+                onPressed: () {
+                  if (filtro != "Nota < 60") {
+                    setState(() {             
+                      filtro = "Nota < 60";
+                    });
+                    
+                  } else {
+                    setState(() {             
+                      filtro = "todos";
+                    });
+                  }
+                },
+              ),
+              ElevatedButton(
+                child: (Text("Nota >= 60")),
+                onPressed: () {
+                  if (filtro != "Nota >= 60") {
+                    setState(() {
+                      filtro = "Nota >= 60";
+                    });
+                  } else {
+                    setState(() {             
+                      filtro = "todos";
+                    });
+
+                  }
+                },
+              ),
+              ElevatedButton(
+                child: (Text("Nota = 100")),
+                onPressed: () {
+                  if (filtro != "Nota = 100") {
+                    setState(() {
+                      filtro = "Nota = 100";
+                    });
+                  } else {
+                    setState(() {             
+                      filtro = "todos";
+                    });
+                  }
+                },
+              ),
+            ]),
+            SizedBox(height: 20),
           ],
         ),
       ),
